@@ -1,33 +1,9 @@
 {
-  "version": 2,
-  "builds": [
-    {
-      "src": "index.html",
-      "use": "@vercel/static"
-    }
-  ],
-  "routes": [
-    {
-      "src": "https://sgb-promotion-website.vercel.app/(.*)",
-      "status": 301,
-      "headers": { "Location": "https://www.sgbpromotion.com/$1" }
-    },
-    {
-      "src": "/(.*)",
-      "dest": "/index.html"
-    }
-  ],
-  "cleanUrls": true,
-  "trailingSlash": false,
-  "headers": [
+  "redirects": [
     {
       "source": "/(.*)",
-      "headers": [
-        { "key": "Cache-Control", "value": "max-age=31536000" },
-        { "key": "X-Frame-Options", "value": "SAMEORIGIN" },
-        { "key": "X-Content-Type-Options", "value": "nosniff" },
-        { "key": "Referrer-Policy", "value": "strict-origin-when-cross-origin" }
-      ]
+      "destination": "https://www.sgbpromotion.com/$1",
+      "permanent": true
     }
   ]
 }
