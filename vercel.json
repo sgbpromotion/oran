@@ -8,6 +8,11 @@
   ],
   "routes": [
     {
+      "src": "https://sgb-promotion-website.vercel.app/(.*)",
+      "status": 301,
+      "headers": { "Location": "https://www.sgbpromotion.com/$1" }
+    },
+    {
       "src": "/(.*)",
       "dest": "/index.html"
     }
