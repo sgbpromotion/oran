@@ -1,9 +1,15 @@
 {
-  "redirects": [
+  "builds": [
     {
-      "source": "/(.*)",
-      "destination": "https://www.sgbpromotion.com",
-      "permanent": true
+      "src": "index.html",
+      "use": "@vercel/static"
     }
-  ]
+  ],
+  "routes": [
+    {
+      "src": "/(.*)",
+      "dest": "/index.html"
+    }
+  ],
+  "outputDirectory": "dist"
 }
